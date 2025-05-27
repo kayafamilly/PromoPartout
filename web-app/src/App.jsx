@@ -98,12 +98,26 @@ function App() {
     setCurrentPage('home')
   }
 
-  // Navigation functions
-  const goToHome = () => setCurrentPage('home')
-  const goToClients = () => setCurrentPage('clients')
-  const goToLogin = () => setCurrentPage('login')
-  const goToRegister = () => setCurrentPage('register')
-  const goToAdmin = () => setCurrentPage('admin')
+  // Routage simple basé sur l'URL
+  useEffect(() => {
+    const path = window.location.pathname
+    if (path === '/clients') {
+      setCurrentPage('clients')
+    } else if (path === '/login') {
+      setCurrentPage('login')
+    } else if (path === '/register') {
+      setCurrentPage('register')
+    } else if (path === '/admin') {
+      setCurrentPage('admin')
+    } else {
+      setCurrentPage('home')
+    }
+  }, [])
+
+  const navigateToPage = (page) => {
+    setCurrentPage(page)
+    window.history.pushState({}, '', page === 'home' ? '/' : `/${page}`)
+  }
 
   if (loading) {
     return (
@@ -130,27 +144,6 @@ function App() {
         onLogout={handleLogout}
       />
     )
-  }
-
-  // Routage simple basé sur l'URL
-  useEffect(() => {
-    const path = window.location.pathname
-    if (path === '/clients') {
-      setCurrentPage('clients')
-    } else if (path === '/login') {
-      setCurrentPage('login')
-    } else if (path === '/register') {
-      setCurrentPage('register')
-    } else if (path === '/admin') {
-      setCurrentPage('admin')
-    } else {
-      setCurrentPage('home')
-    }
-  }, [])
-
-  const navigateToPage = (page) => {
-    setCurrentPage(page)
-    window.history.pushState({}, '', page === 'home' ? '/' : `/${page}`)
   }
 
   return (
