@@ -1,4 +1,3 @@
-import React from 'react'
 import './ClientsPage.css'
 
 const ClientsPage = ({ onBackToHome }) => {
@@ -57,7 +56,7 @@ const ClientsPage = ({ onBackToHome }) => {
             </button>
 
             <p className="trust-indicators">
-              ⭐⭐⭐⭐⭐ 4.8/5 • Plus de 10 000 téléchargements • Gratuit
+              Application gratuite • Disponible sur Android
             </p>
           </div>
 
@@ -212,7 +211,7 @@ const ClientsPage = ({ onBackToHome }) => {
               Télécharger PromoPartout
               <small>Gratuit sur Google Play</small>
             </button>
-            <p className="guarantee">✅ 100% Gratuit • ✅ Pas de publicité • ✅ Respect de la vie privée</p>
+            <p className="guarantee">✅ 100% Gratuit • ✅ Respect de la vie privée</p>
           </div>
         </div>
       </section>
