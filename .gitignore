@@ -1,0 +1,67 @@
+# Dépendances Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Fichiers de build
+build/
+dist/
+*.tgz
+*.tar.gz
+
+# Variables d'environnement
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Base de données SQLite
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+logs/
+*.log
+
+# Fichiers temporaires
+.tmp/
+temp/
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+
+# Flutter
+mobile-app/promo_partout/.dart_tool/
+mobile-app/promo_partout/.flutter-plugins
+mobile-app/promo_partout/.flutter-plugins-dependencies
+mobile-app/promo_partout/.packages
+mobile-app/promo_partout/build/
+mobile-app/promo_partout/ios/Pods/
+mobile-app/promo_partout/ios/.symlinks/
+mobile-app/promo_partout/android/.gradle/
+mobile-app/promo_partout/android/app/build/
+mobile-app/promo_partout/android/build/
+
+# Fichiers de déploiement temporaires
+deploy-package/
+*.zip
+
+# Certificats et clés
+*.pem
+*.key
+*.crt
+
+# Fichiers de service Firebase (contiennent des secrets)
+*firebase-adminsdk*.json
+*service-account*.json

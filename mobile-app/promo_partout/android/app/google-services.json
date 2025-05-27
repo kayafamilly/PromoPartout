@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "289609289484",
+    "project_id": "promo-partout",
+    "storage_bucket": "promo-partout.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:289609289484:android:66178451a39961935ac329",
+        "android_client_info": {
+          "package_name": "com.example.promo_partout"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC63d4DZcPqr9rjWNpEmnucXl_p_EIqsnI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

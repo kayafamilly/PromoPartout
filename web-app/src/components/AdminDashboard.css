@@ -1,0 +1,402 @@
+/* Dashboard Admin */
+.admin-dashboard {
+  min-height: 100vh;
+  background-color: #f8fafc;
+}
+
+.admin-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.admin-header-left h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.admin-header-left span {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.logout-button {
+  background: rgba(255,255,255,0.2);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.logout-button:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+.admin-nav {
+  background: white;
+  padding: 0 2rem;
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #64748b;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s;
+}
+
+.nav-button:hover {
+  color: #334155;
+  background-color: #f8fafc;
+}
+
+.nav-button.active {
+  color: #667eea;
+  border-bottom-color: #667eea;
+  background-color: #f8fafc;
+}
+
+.admin-main {
+  padding: 2rem;
+}
+
+/* Dashboard Content */
+.dashboard-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.stat-icon {
+  font-size: 2.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stat-info h3 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.stat-info p {
+  margin: 0;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.recent-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1.5rem;
+}
+
+.recent-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.recent-card h3 {
+  margin: 0 0 1rem 0;
+  color: #1e293b;
+  font-size: 1.1rem;
+}
+
+.recent-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.recent-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background: #f8fafc;
+  border-radius: 8px;
+  border-left: 3px solid #667eea;
+}
+
+.recent-info strong {
+  display: block;
+  color: #1e293b;
+  font-size: 0.9rem;
+}
+
+.recent-info span {
+  color: #64748b;
+  font-size: 0.8rem;
+}
+
+.recent-date {
+  font-size: 0.8rem;
+  color: #64748b;
+  text-align: right;
+}
+
+/* Sections communes */
+.admin-section {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  margin-bottom: 2rem;
+}
+
+.section-header h2 {
+  margin: 0 0 0.5rem 0;
+  color: #1e293b;
+  font-size: 1.5rem;
+}
+
+.section-header p {
+  margin: 0;
+  color: #64748b;
+}
+
+.loading, .empty-state {
+  text-align: center;
+  padding: 3rem;
+  color: #64748b;
+}
+
+.delete-button {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.delete-button:hover:not(:disabled) {
+  background: #dc2626;
+}
+
+.delete-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Grilles spécifiques */
+.merchants-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.promotions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Cartes commerçants */
+.merchant-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.merchant-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.merchant-header {
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.merchant-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.merchant-logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 2px solid #f1f5f9;
+}
+
+.merchant-info h3 {
+  margin: 0;
+  color: #1e293b;
+  font-size: 1.1rem;
+}
+
+.merchant-email {
+  margin: 0.25rem 0 0 0;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.merchant-details {
+  padding: 1.5rem;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+  gap: 1rem;
+}
+
+.detail-row:last-child {
+  margin-bottom: 0;
+}
+
+.detail-label {
+  font-size: 0.9rem;
+  color: #64748b;
+  min-width: 120px;
+}
+
+.detail-value {
+  font-size: 0.9rem;
+  color: #1e293b;
+  text-align: right;
+  flex: 1;
+  word-break: break-word;
+}
+
+/* Cartes promotions */
+.promotion-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.promotion-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.promotion-header {
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.promotion-title-section h3 {
+  margin: 0 0 0.25rem 0;
+  color: #1e293b;
+  font-size: 1.2rem;
+}
+
+.promotion-merchant {
+  color: #667eea;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.promotion-content {
+  padding: 1.5rem;
+}
+
+.promotion-description {
+  margin-bottom: 1.5rem;
+}
+
+.promotion-description p {
+  margin: 0;
+  color: #374151;
+  line-height: 1.6;
+}
+
+.promotion-details .detail-row {
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .admin-header {
+    padding: 1rem;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .admin-nav {
+    padding: 0 1rem;
+    overflow-x: auto;
+  }
+
+  .admin-main {
+    padding: 1rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .recent-section {
+    grid-template-columns: 1fr;
+  }
+
+  .merchants-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .detail-value {
+    text-align: left;
+  }
+}
