@@ -19,7 +19,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 20px;
-  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -72,7 +72,7 @@
 }
 
 .hero-clients .container {
-  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 20px;
   display: grid;
@@ -251,7 +251,7 @@
 }
 
 .problem-solution .container {
-  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 20px;
   display: grid;
@@ -304,7 +304,7 @@
 }
 
 .how-it-works .container {
-  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -373,7 +373,7 @@
 }
 
 .testimonials .container {
-  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -422,7 +422,7 @@
 }
 
 .savings-stats .container {
-  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -462,7 +462,7 @@
 }
 
 .final-cta .container {
-  max-width: 800px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -516,7 +516,7 @@
 }
 
 .clients-footer .container {
-  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 20px;
 }

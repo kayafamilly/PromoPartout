@@ -178,9 +178,9 @@ const HomePage = ({ onNavigateToMerchant, onNavigateToAdmin, onNavigateToClients
               </ul>
             </div>
             <div className="footer-section">
-              <h5>Contact</h5>
-              <p>📧 contact@promo-partout.com</p>
-              <p>📞 +33 1 23 45 67 89</p>
+              <h5>PromoPartout</h5>
+              <p>L'application qui vous fait économiser</p>
+              <p>Disponible bientôt sur mobile</p>
             </div>
           </div>
           <div className="footer-bottom">

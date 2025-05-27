@@ -27,14 +27,14 @@ const ClientsPage = ({ onBackToHome }) => {
         <div className="container">
           <div className="hero-content">
             <h1 className="hero-title">
-              Ne ratez plus jamais une 
+              Ne ratez plus jamais une
               <span className="highlight"> promotion près de chez vous</span>
             </h1>
             <p className="hero-subtitle">
-              Économisez jusqu'à <strong>30% sur vos achats</strong> grâce aux notifications 
+              Économisez jusqu'à <strong>30% sur vos achats</strong> grâce aux notifications
               automatiques quand vous passez près d'une promotion !
             </p>
-            
+
             <div className="value-props">
               <div className="value-prop">
                 <span className="icon">💰</span>
@@ -97,7 +97,7 @@ const ClientsPage = ({ onBackToHome }) => {
               <li>Découvrir les promotions trop tard</li>
             </ul>
           </div>
-          
+
           <div className="solution">
             <h2>✨ PromoPartout résout tout ça !</h2>
             <ul className="solution-list">
@@ -222,8 +222,7 @@ const ClientsPage = ({ onBackToHome }) => {
         <div className="container">
           <p>&copy; 2024 PromoPartout - L'app qui vous fait économiser</p>
           <p>
-            <button className="link-btn" onClick={onBackToHome}>Accueil</button> • 
-            <a href="mailto:contact@promo-partout.com">Contact</a>
+            <button className="link-btn" onClick={onBackToHome}>Accueil</button>
           </p>
         </div>
       </footer>
