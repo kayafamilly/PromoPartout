@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import './App.css'
 import HomePage from './components/HomePage'
+import ClientsPage from './components/ClientsPage'
 import Login from './components/Login'
 import Register from './components/Register'
 import MerchantDashboard from './components/MerchantDashboard'
@@ -13,7 +14,7 @@ function App() {
   const [merchant, setMerchant] = useState(null)
   const [isAdmin, setIsAdmin] = useState(false)
   const [admin, setAdmin] = useState(null)
-  const [authMode, setAuthMode] = useState('home') // 'home', 'login', 'register', ou 'admin'
+  const [currentPage, setCurrentPage] = useState('home') // 'home', 'clients', 'login', 'register', 'admin'
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -85,7 +86,7 @@ function App() {
     delete axios.defaults.headers.common['Authorization']
     setMerchant(null)
     setIsAuthenticated(false)
-    setAuthMode('login')
+    setCurrentPage('home')
   }
 
   const handleAdminLogout = () => {
@@ -94,13 +95,15 @@ function App() {
     delete axios.defaults.headers.common['Authorization']
     setAdmin(null)
     setIsAdmin(false)
-    setAuthMode('home')
+    setCurrentPage('home')
   }
 
-  const switchToHome = () => setAuthMode('home')
-  const switchToRegister = () => setAuthMode('register')
-  const switchToLogin = () => setAuthMode('login')
-  const switchToAdmin = () => setAuthMode('admin')
+  // Navigation functions
+  const goToHome = () => setCurrentPage('home')
+  const goToClients = () => setCurrentPage('clients')
+  const goToLogin = () => setCurrentPage('login')
+  const goToRegister = () => setCurrentPage('register')
+  const goToAdmin = () => setCurrentPage('admin')
 
   if (loading) {
     return (
@@ -129,31 +132,57 @@ function App() {
     )
   }
 
+  // Routage simple basé sur l'URL
+  useEffect(() => {
+    const path = window.location.pathname
+    if (path === '/clients') {
+      setCurrentPage('clients')
+    } else if (path === '/login') {
+      setCurrentPage('login')
+    } else if (path === '/register') {
+      setCurrentPage('register')
+    } else if (path === '/admin') {
+      setCurrentPage('admin')
+    } else {
+      setCurrentPage('home')
+    }
+  }, [])
+
+  const navigateToPage = (page) => {
+    setCurrentPage(page)
+    window.history.pushState({}, '', page === 'home' ? '/' : `/${page}`)
+  }
+
   return (
     <div className="app">
-      {authMode === 'home' ? (
+      {currentPage === 'home' ? (
         <HomePage
-          onNavigateToMerchant={switchToLogin}
-          onNavigateToAdmin={switchToAdmin}
+          onNavigateToMerchant={() => navigateToPage('login')}
+          onNavigateToAdmin={() => navigateToPage('admin')}
+          onNavigateToClients={() => navigateToPage('clients')}
         />
-      ) : authMode === 'login' ? (
+      ) : currentPage === 'clients' ? (
+        <ClientsPage
+          onBackToHome={() => navigateToPage('home')}
+        />
+      ) : currentPage === 'login' ? (
         <Login
           onLogin={handleLogin}
-          onSwitchToRegister={switchToRegister}
-          onSwitchToAdmin={switchToAdmin}
-          onBackToHome={switchToHome}
+          onSwitchToRegister={() => navigateToPage('register')}
+          onSwitchToAdmin={() => navigateToPage('admin')}
+          onBackToHome={() => navigateToPage('home')}
         />
-      ) : authMode === 'register' ? (
+      ) : currentPage === 'register' ? (
         <Register
           onLogin={handleLogin}
-          onSwitchToLogin={switchToLogin}
-          onBackToHome={switchToHome}
+          onSwitchToLogin={() => navigateToPage('login')}
+          onBackToHome={() => navigateToPage('home')}
         />
       ) : (
         <AdminLogin
           onLoginSuccess={handleAdminLogin}
-          onSwitchToLogin={switchToLogin}
-          onBackToHome={switchToHome}
+          onSwitchToLogin={() => navigateToPage('login')}
+          onBackToHome={() => navigateToPage('home')}
         />
       )}
     </div>

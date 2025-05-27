@@ -167,6 +167,19 @@
   border-color: rgba(255, 255, 255, 0.5);
 }
 
+.clients-btn {
+  background: rgba(255, 215, 0, 0.2) !important;
+  color: #ffd700 !important;
+  border-color: #ffd700 !important;
+  font-weight: 600;
+}
+
+.clients-btn:hover {
+  background: rgba(255, 215, 0, 0.3) !important;
+  border-color: #ffed4e !important;
+  color: #ffed4e !important;
+}
+
 /* Phone Mockup */
 .hero-visual {
   display: flex;
@@ -385,21 +398,21 @@
     grid-template-columns: 1fr;
     text-align: center;
   }
-  
+
   .hero-title {
     font-size: 2rem;
   }
-  
+
   .phone-mockup {
     width: 200px;
     height: 400px;
   }
-  
+
   .nav-menu {
     flex-direction: column;
     gap: 0.5rem;
   }
-  
+
   .download-buttons {
     flex-direction: column;
   }

@@ -1,7 +1,7 @@
 import React from 'react'
 import './HomePage.css'
 
-const HomePage = ({ onNavigateToMerchant, onNavigateToAdmin }) => {
+const HomePage = ({ onNavigateToMerchant, onNavigateToAdmin, onNavigateToClients }) => {
   return (
     <div className="homepage">
       {/* Header */}
@@ -12,13 +12,13 @@ const HomePage = ({ onNavigateToMerchant, onNavigateToAdmin }) => {
             <h1>PromoPartout</h1>
           </div>
           <nav className="nav-menu">
-            <button 
+            <button
               className="nav-btn merchant-btn"
               onClick={onNavigateToMerchant}
             >
               Espace Commerçant
             </button>
-            <button 
+            <button
               className="nav-btn admin-btn"
               onClick={onNavigateToAdmin}
             >
@@ -33,29 +33,29 @@ const HomePage = ({ onNavigateToMerchant, onNavigateToAdmin }) => {
         <div className="container">
           <div className="hero-content">
             <h2 className="hero-title">
-              Découvrez les meilleures promotions 
+              Découvrez les meilleures promotions
               <span className="highlight"> près de chez vous</span>
             </h2>
             <p className="hero-description">
-              PromoPartout connecte les commerçants locaux avec leurs clients grâce à 
-              des promotions géolocalisées. Recevez des notifications en temps réel 
+              PromoPartout connecte les commerçants locaux avec leurs clients grâce à
+              des promotions géolocalisées. Recevez des notifications en temps réel
               quand vous êtes près d'une offre exceptionnelle !
             </p>
             <div className="hero-actions">
-              <button 
+              <button
                 className="cta-primary"
                 onClick={onNavigateToMerchant}
               >
                 Devenir Commerçant Partenaire
               </button>
               <div className="app-download">
-                <span>Téléchargez l'app mobile :</span>
+                <span>Vous êtes un particulier ?</span>
                 <div className="download-buttons">
-                  <button className="download-btn">
-                    📱 App Store
-                  </button>
-                  <button className="download-btn">
-                    🤖 Google Play
+                  <button
+                    className="download-btn clients-btn"
+                    onClick={onNavigateToClients}
+                  >
+                    📱 Découvrir l'App Mobile
                   </button>
                 </div>
               </div>
@@ -148,7 +148,7 @@ const HomePage = ({ onNavigateToMerchant, onNavigateToAdmin }) => {
           <div className="cta-content">
             <h3>Prêt à booster votre commerce local ?</h3>
             <p>Rejoignez des centaines de commerçants qui font confiance à PromoPartout</p>
-            <button 
+            <button
               className="cta-primary large"
               onClick={onNavigateToMerchant}
             >
