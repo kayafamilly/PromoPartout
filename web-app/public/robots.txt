@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+Allow: /clients
+Allow: /login
+Allow: /register
+
+# Bloquer l'administration des moteurs de recherche
+Disallow: /admin
+
+# Sitemap
+Sitemap: https://promo-partout.com/sitemap.xml
+
+# Optimisations SEO
+Crawl-delay: 1
