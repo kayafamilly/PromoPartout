@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './Auth.css';
 
-const Login = ({ onLogin, onSwitchToRegister, onSwitchToAdmin }) => {
+const Login = ({ onLogin, onSwitchToRegister, onSwitchToAdmin, onBackToHome }) => {
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -44,6 +44,13 @@ const Login = ({ onLogin, onSwitchToRegister, onSwitchToAdmin }) => {
     <div className="auth-container">
       <div className="auth-card">
         <div className="auth-header">
+          <button
+            type="button"
+            className="back-home-btn"
+            onClick={onBackToHome}
+          >
+            ← Retour à l'accueil
+          </button>
           <h1>🏪 PromoPartout</h1>
           <h2>Connexion Commerçant</h2>
         </div>

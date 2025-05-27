@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import './App.css'
+import HomePage from './components/HomePage'
 import Login from './components/Login'
 import Register from './components/Register'
 import MerchantDashboard from './components/MerchantDashboard'
@@ -12,7 +13,7 @@ function App() {
   const [merchant, setMerchant] = useState(null)
   const [isAdmin, setIsAdmin] = useState(false)
   const [admin, setAdmin] = useState(null)
-  const [authMode, setAuthMode] = useState('login') // 'login', 'register', ou 'admin'
+  const [authMode, setAuthMode] = useState('home') // 'home', 'login', 'register', ou 'admin'
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -93,9 +94,10 @@ function App() {
     delete axios.defaults.headers.common['Authorization']
     setAdmin(null)
     setIsAdmin(false)
-    setAuthMode('login')
+    setAuthMode('home')
   }
 
+  const switchToHome = () => setAuthMode('home')
   const switchToRegister = () => setAuthMode('register')
   const switchToLogin = () => setAuthMode('login')
   const switchToAdmin = () => setAuthMode('admin')
@@ -129,21 +131,29 @@ function App() {
 
   return (
     <div className="app">
-      {authMode === 'login' ? (
+      {authMode === 'home' ? (
+        <HomePage
+          onNavigateToMerchant={switchToLogin}
+          onNavigateToAdmin={switchToAdmin}
+        />
+      ) : authMode === 'login' ? (
         <Login
           onLogin={handleLogin}
           onSwitchToRegister={switchToRegister}
           onSwitchToAdmin={switchToAdmin}
+          onBackToHome={switchToHome}
         />
       ) : authMode === 'register' ? (
         <Register
           onLogin={handleLogin}
           onSwitchToLogin={switchToLogin}
+          onBackToHome={switchToHome}
         />
       ) : (
         <AdminLogin
           onLoginSuccess={handleAdminLogin}
           onSwitchToLogin={switchToLogin}
+          onBackToHome={switchToHome}
         />
       )}
     </div>

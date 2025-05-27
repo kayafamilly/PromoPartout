@@ -2,7 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import './Auth.css';
 
-export default function AdminLogin({ onLoginSuccess, onSwitchToLogin }) {
+export default function AdminLogin({ onLoginSuccess, onSwitchToLogin, onBackToHome }) {
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -42,6 +42,13 @@ export default function AdminLogin({ onLoginSuccess, onSwitchToLogin }) {
     <div className="auth-container">
       <div className="auth-card">
         <div className="auth-header">
+          <button
+            type="button"
+            className="back-home-btn"
+            onClick={onBackToHome}
+          >
+            ← Retour à l'accueil
+          </button>
           <h1>🛡️ Administration PromoPartout</h1>
           <p>Connexion administrateur</p>
         </div>
